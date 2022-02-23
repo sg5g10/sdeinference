@@ -124,9 +124,9 @@ if __name__ == '__main__':
                         help='number of VI iterations') 
         parser.add_argument('--num_qsamples', type=int, default=1000, metavar='N',
                         help='number of draws from variational posterior ')        
-        parser.add_argument('--pmmh_iters', type=int, default=10000, metavar='N',
+        parser.add_argument('--pmmh_iters', type=int, default=100000, metavar='N',
                         help='number of PMMH iterations')    
-        parser.add_argument('--pmmh_warmup', type=int, default=5000, metavar='N',
+        parser.add_argument('--pmmh_warmup', type=int, default=50000, metavar='N',
                         help='number of PMMH warmup_steps')  
         parser.add_argument('--pmmh_thin', type=int, default=50, metavar='N',
                         help='thinning ratio')   
