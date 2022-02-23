@@ -42,7 +42,7 @@ def main():
         
         time=jnp.arange(0,10,.1)
         Y=np.loadtxt('./data/ou_data.txt')
-        logP = LogPosterior(Y, transform=True)
+        logP = LogPosterior(Y, num_particles=args.pmmh_nparticles, transform=True)
         X0 = np.array([0.8383164,0.8383164,0.8383164,0.,0.67487067])
         X0 = logP._transform_from_constraint(X0)
         Init_scale = 1*np.abs(X0)
@@ -128,6 +128,8 @@ if __name__ == '__main__':
                         help='number of PMMH warmup_steps')  
         parser.add_argument('--pmmh_thin', type=int, default=50, metavar='N',
                         help='thinning ratio')                          
+        parser.add_argument('--pmmh_nparticles', type=int, default=100, metavar='N',
+                        help='number of particles to go with PMMH') 
         parser.add_argument('--num_bases', type=int, default=50, metavar='N',
                         help='number of coefficients for saode') 
         parser.add_argument('--end_point', type=int, default=10, metavar='N',

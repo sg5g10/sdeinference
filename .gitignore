@@ -3,5 +3,8 @@
 .vscode
 .ipynb_checkpoints
 __pycache__
+npr_inference/__pycache__
+mcmc/__pycache__
+models/__pycache__
 results/
 figures/

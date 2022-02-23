@@ -12,6 +12,9 @@ http://num.pyro.ai/en/stable/getting_started.html#installation
 To run the stochastic Lotka-Volterra model: 
 `python lotkavolterra_example`
 
+By default the number of particles for PMMH is set to `100`, to change this run with option:
+`python lotkavolterra_example --pmmh_nparticles 100`
+
 
 
 

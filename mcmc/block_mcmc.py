@@ -19,8 +19,9 @@ class MCMC(object):
     def run(self, prng_key, x0):
         # Report the current settings
         if self._verbose:
-            print('Running PMMH with adaptive RW proposal')
+            print('Running PMMH with adaptive RW proposal and {} particles'.format(self._target._P))
             print('Total number of iterations: ' + str(self._iterations))
+            
 
     
         # Problem dimension
@@ -92,7 +93,7 @@ class MCMC(object):
                 self._sampler.adapt(i, current, accepted, log_ratio, chain[:i,:])
 
             # Report
-            if self._verbose and i % 2000 == 0:
+            if self._verbose and i % 20000 == 0:
                 print('Iteration ' + str(i) + ' of ' + str(self._iterations))
 
                 print('  Acceptance rate: ' + str(acceptance))
