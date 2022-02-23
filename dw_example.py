@@ -119,8 +119,8 @@ def main():
 if __name__ == '__main__':
         
         parser = argparse.ArgumentParser(
-                description='Fit OU model')
-        parser.add_argument('--vi_iters', type=int, default=500, metavar='N',
+                description='Fit Double-well SDE')
+        parser.add_argument('--vi_iters', type=int, default=2000, metavar='N',
                         help='number of VI iterations') 
         parser.add_argument('--num_qsamples', type=int, default=1000, metavar='N',
                         help='number of draws from variational posterior ')        

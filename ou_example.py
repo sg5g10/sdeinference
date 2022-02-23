@@ -117,20 +117,20 @@ def main():
 if __name__ == '__main__':
 
         parser = argparse.ArgumentParser(
-                description='Fit OU model')
-        parser.add_argument('--vi_iters', type=int, default=500, metavar='N',
+                description='Fit OU SDE')
+        parser.add_argument('--vi_iters', type=int, default=2000, metavar='N',
                         help='number of VI iterations') 
         parser.add_argument('--num_qsamples', type=int, default=1000, metavar='N',
                         help='number of draws from variational posterior ')        
-        parser.add_argument('--pmmh_iters', type=int, default=2000, metavar='N',
+        parser.add_argument('--pmmh_iters', type=int, default=100000, metavar='N',
                         help='number of PMMH iterations')    
-        parser.add_argument('--pmmh_warmup', type=int, default=10000, metavar='N',
+        parser.add_argument('--pmmh_warmup', type=int, default=50000, metavar='N',
                         help='number of PMMH warmup_steps')  
         parser.add_argument('--pmmh_thin', type=int, default=50, metavar='N',
                         help='thinning ratio')                          
         parser.add_argument('--pmmh_nparticles', type=int, default=100, metavar='N',
                         help='number of particles to go with PMMH') 
-        parser.add_argument('--num_bases', type=int, default=50, metavar='N',
+        parser.add_argument('--num_bases', type=int, default=10, metavar='N',
                         help='number of coefficients for saode') 
         parser.add_argument('--end_point', type=int, default=10, metavar='N',
                         help='the value of T for the KL expansion')  
