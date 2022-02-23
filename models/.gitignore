@@ -1,7 +1,0 @@
-*.*~
-*.pyc
-.vscode
-.ipynb_checkpoints
-__pycache__
-results/
-figures/
