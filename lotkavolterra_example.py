@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 import numpy as np
 import matplotlib.pyplot as plt
-import pickle
 import argparse
 import seaborn as sns
 import scipy.stats as stats
@@ -75,8 +74,6 @@ def main():
         total = t1-t0
         print('Time', total)
         # Report PMMH ESS and save chains/params
-        param_filename = './results/lv_chains.p'
-        pickle.dump(chains_amgs, open(param_filename, 'wb'))
         dict_amgs = {'theta': np.array(chains_amgs)[:,burnin:,:]}
         data_amgs = az.convert_to_inference_data(dict_amgs)
         amgs_ess = az.ess(data_amgs,relative=True).to_dataframe()['theta'].mean()
@@ -159,6 +156,7 @@ if __name__ == '__main__':
                                               
                                                           
         args = parser.parse_args()
+        numpyro.set_host_device_count(multiprocessing.cpu_count())
         main()
 
 
